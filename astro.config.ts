@@ -18,7 +18,9 @@ import path from 'path'
 import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  adapter: netlify(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
+  adapter: netlify({
+    imageCDN: false
+  }), // Disable Netlify image CDN so built assets load on any host
   site: themeConfig.site.website,
   image: {
     service: {
