@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import { themeConfig } from '@/config'
 import type { BaseHeadProps } from '@/types/component.types'
+import Analytics from '@vercel/analytics/astro'
 import 'katex/dist/katex.min.css'
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -55,3 +56,5 @@ const imageUrl = ogImage ? new URL(ogImage, Astro.url) : new URL('/og/chiri-og.p
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageUrl} />
+
+<Analytics />
